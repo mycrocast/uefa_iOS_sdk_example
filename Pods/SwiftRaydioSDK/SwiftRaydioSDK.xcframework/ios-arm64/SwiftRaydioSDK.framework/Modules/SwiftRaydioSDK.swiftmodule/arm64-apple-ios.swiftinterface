@@ -46,6 +46,7 @@ public struct Livestream : Swift.Decodable {
   public var isMuted: Swift.Bool
   public var title: Swift.String
   public var streamId: Swift.String
+  public var matchId: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Language : Swift.Decodable {
@@ -104,6 +105,7 @@ public struct StreamGroupEntry {
   public var language: Swift.String
   public var streamId: Swift.String
   public var isMuted: Swift.Bool
+  public var matchId: Swift.String
 }
 public protocol InjectionKey {
   associatedtype Value
@@ -136,6 +138,7 @@ public protocol ErrorDelegate {
 }
 public struct StreamGroup {
   public var title: Swift.String
+  public var matchId: Swift.String
   public var entries: [SwiftRaydioSDK.StreamGroupEntry]
 }
 public protocol StreamGroupDelegate {

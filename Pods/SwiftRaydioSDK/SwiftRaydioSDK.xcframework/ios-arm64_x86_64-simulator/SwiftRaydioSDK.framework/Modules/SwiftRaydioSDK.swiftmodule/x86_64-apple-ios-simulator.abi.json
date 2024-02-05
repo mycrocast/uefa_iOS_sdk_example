@@ -1170,6 +1170,116 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "matchId",
+            "printedName": "matchId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14SwiftRaydioSDK10LivestreamV7matchIdSSSgvp",
+            "mangledName": "$s14SwiftRaydioSDK10LivestreamV7matchIdSSSgvp",
+            "moduleName": "SwiftRaydioSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK10LivestreamV7matchIdSSSgvg",
+                "mangledName": "$s14SwiftRaydioSDK10LivestreamV7matchIdSSSgvg",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK10LivestreamV7matchIdSSSgvs",
+                "mangledName": "$s14SwiftRaydioSDK10LivestreamV7matchIdSSSgvs",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK10LivestreamV7matchIdSSSgvM",
+                "mangledName": "$s14SwiftRaydioSDK10LivestreamV7matchIdSSSgvM",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -3324,6 +3434,92 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "matchId",
+            "printedName": "matchId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvp",
+            "mangledName": "$s14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvp",
+            "moduleName": "SwiftRaydioSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvg",
+                "mangledName": "$s14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvg",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvs",
+                "mangledName": "$s14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvs",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvM",
+                "mangledName": "$s14SwiftRaydioSDK16StreamGroupEntryV7matchIdSSvM",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -4534,6 +4730,92 @@
           },
           {
             "kind": "Var",
+            "name": "matchId",
+            "printedName": "matchId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14SwiftRaydioSDK11StreamGroupV7matchIdSSvp",
+            "mangledName": "$s14SwiftRaydioSDK11StreamGroupV7matchIdSSvp",
+            "moduleName": "SwiftRaydioSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK11StreamGroupV7matchIdSSvg",
+                "mangledName": "$s14SwiftRaydioSDK11StreamGroupV7matchIdSSvg",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK11StreamGroupV7matchIdSSvs",
+                "mangledName": "$s14SwiftRaydioSDK11StreamGroupV7matchIdSSvs",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14SwiftRaydioSDK11StreamGroupV7matchIdSSvM",
+                "mangledName": "$s14SwiftRaydioSDK11StreamGroupV7matchIdSSvM",
+                "moduleName": "SwiftRaydioSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "entries",
             "printedName": "entries",
             "children": [
@@ -4972,7 +5254,7 @@
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/data\/Livestream.swift",
       "kind": "StringLiteral",
-      "offset": 281,
+      "offset": 312,
       "length": 10,
       "value": "\"stream: \""
     },
@@ -5307,78 +5589,85 @@
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
+      "kind": "StringLiteral",
+      "offset": 2320,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "BooleanLiteral",
-      "offset": 2240,
+      "offset": 2401,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "BooleanLiteral",
-      "offset": 2491,
+      "offset": 2652,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "StringLiteral",
-      "offset": 2863,
+      "offset": 3024,
       "length": 15,
       "value": "\"Added stream \""
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "StringLiteral",
-      "offset": 3032,
+      "offset": 3193,
       "length": 17,
       "value": "\"Updated stream \""
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "Array",
-      "offset": 3157,
+      "offset": 3373,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "IntegerLiteral",
-      "offset": 3557,
+      "offset": 3791,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "Array",
-      "offset": 4111,
+      "offset": 4412,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "IntegerLiteral",
-      "offset": 4498,
+      "offset": 4817,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "StringLiteral",
-      "offset": 4708,
+      "offset": 5027,
       "length": 17,
       "value": "\"Removed stream \""
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "StringLiteral",
-      "offset": 4943,
+      "offset": 5262,
       "length": 19,
       "value": "\"Received streams \""
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/livestream\/container\/StreamsContainer.swift",
       "kind": "Dictionary",
-      "offset": 5276,
+      "offset": 5595,
       "length": 3,
       "value": "[]"
     },
@@ -5889,21 +6178,35 @@
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 7831,
+      "offset": 6502,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/Session.swift",
+      "kind": "StringLiteral",
+      "offset": 7947,
       "length": 58,
       "value": "\"Calling pause with a streamId not found in the container\""
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/Session.swift",
+      "kind": "StringLiteral",
+      "offset": 8070,
+      "length": 3,
+      "value": "\"0\""
+    },
+    {
+      "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 8263,
+      "offset": 8515,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sbeeckmann\/Documents\/GitHub\/swiftRaydioSDK\/SwiftRaydioSDK\/SwiftRaydioSDK\/workflows\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 8892,
+      "offset": 9144,
       "length": 4,
       "value": "true"
     },
