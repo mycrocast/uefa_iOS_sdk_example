@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Listening_to_a_stream  Reference</title>
+    <title>ErrorHandling  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,7 +13,7 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a title="Listening_to_a_stream  Reference"></a>
+    <a title="ErrorHandling  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
@@ -28,7 +28,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" alt=""/>
-        Listening_to_a_stream  Reference
+        ErrorHandling  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -172,57 +172,84 @@
         <section>
           <section class="section">
             
-            <h1 id='listening-to-a-stream' class='heading'>Listening to a stream</h1>
+            <h1 id='error-handling' class='heading'>Error handling</h1>
 
-<p>You app should have the background capability audio enabled </p>
+<p>A short overview of the errors that can occur and what can be done.</p>
 
-<p>and you should configure the audio session:</p>
-<pre class="highlight swift"><code>  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">configureAudioSession</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">do</span> <span class="p">{</span>
-            <span class="k">try</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setCategory</span><span class="p">(</span><span class="o">.</span><span class="n">playback</span><span class="p">)</span>
-            <span class="k">try</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setActive</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-</code></pre>
+<p>[TOC]</p>
+<h3 id='getting-started' class='heading'>Getting started</h3>
 
-<p>After receiving the streams you can start listen to a stream by providing the corresponding <code>streamId</code>of the <code><a href="Structs/StreamGroupEntry.html">StreamGroupEntry</a></code> to the <code>play</code> function of the sdk.</p>
+<p>To start receiving errors that are thrown from the SDK you need to register the corresponding <code><a href="Protocols/ErrorDelegate.html">ErrorDelegate</a></code></p>
+<pre class="highlight swift"><code><span class="c1">/// Implement this delegate to receive errors thrown by the</span>
+<span class="c1">/// SDK</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ErrorDelegate</span> <span class="p">{</span>
 
-<p>To receive updates of the play state you first should register the corresponding delegate to receive state updates.</p>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ListenStateDelegate</span> <span class="p">{</span>
-    <span class="kd">func</span> <span class="nf">onListenStageChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">playState</span><span class="p">:</span> <span class="kt">RaydioPlayState</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RaydioPlayState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="n">playing</span>
-    <span class="k">case</span> <span class="n">idle</span>
-    <span class="k">case</span> <span class="n">connecting</span>
-    <span class="k">case</span> <span class="nf">failed</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">RaydioError</span><span class="p">)</span>
-    <span class="k">case</span> <span class="n">paused</span>
-    <span class="k">case</span> <span class="n">disconnected</span>
+    <span class="c1">/// called when an actual error occured</span>
+    <span class="kd">func</span> <span class="nf">onRaydioError</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
 
-<p>A description of <code><a href="Enums/RaydioError.html">RaydioError</a></code> can be found <a href="error_handling.html">here</a></p>
+<p>The function receives either a low level error from the system or an error of type <code><a href="Enums/RaydioError.html">RaydioError</a></code></p>
+<h2 id='raydioerror' class='heading'>RaydioError</h2>
 
-<p>To register the delegate use the. <code>listenerStateDelegate</code> property of the sdk.</p>
+<p>The possible values for the error are displayed below:</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents an error state of the SDK</span>
+<span class="c1">/// Most of the error states can be gracefully processed</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RaydioError</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="c1">/// We are not subscribed to the backend, meaning all requests that we</span>
+    <span class="c1">/// send are just rejected.</span>
+    <span class="c1">/// This could happen if the sdk is not connected or in the disconnected state</span>
+    <span class="c1">/// A connect call should fix this</span>
+    <span class="k">case</span> <span class="kt">NOT_SUBSCRIBED</span>
 
-<p>This needs to be done only once.</p>
-<h3 id='the-disconnected-state' class='heading'>The disconnected state</h3>
+    <span class="c1">/// We tried to play/pause a stream that is not existing anymore</span>
+    <span class="c1">/// This could happen for several reasons, all of them involve network issues on</span>
+    <span class="c1">/// either the streamer or listener side</span>
+    <span class="c1">/// A potential workflow could be to request the current streams from the backend again, and if the</span>
+    <span class="c1">/// List contains the clicked streamId play it and if not display a message</span>
+    <span class="k">case</span> <span class="kt">STREAM_NOT_FOUND</span><span class="p">(</span><span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
 
-<p>The disconnected state can be normal in case the listener paused. Otherwise this can be based on network issues of either the listener or streamer.</p>
-<h3 id='the-failed-state' class='heading'>The failed state</h3>
+    <span class="c1">/// Listening failed for the stream.</span>
+    <span class="c1">/// In the Log or ListenStageDelegate more information should be provided why.</span>
+    <span class="c1">/// The problem could be that the streamer closed during connection the stream or that network issues occurred.</span>
+    <span class="c1">/// The same solution as for STREAM_NOT_FOUND could be applied</span>
+    <span class="k">case</span> <span class="kt">LISTEN_FAILED</span><span class="p">(</span><span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
 
-<p>This state can follow the disconnected state and represents a broken audio connection where a automatic reconnection is not possible.</p>
+    <span class="c1">/// Something internally went wrong and the logs could provide more information.</span>
+    <span class="c1">/// There is no recovery possible of the action and just an information could be displayed</span>
+    <span class="k">case</span> <span class="kt">INTERNAL</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='not_subscribed' class='heading'>NOT_SUBSCRIBED</h3>
 
-<p>Most of the time this reprents that either for example the streamer stopped, has network issues or you can have network issues.</p>
-<h2 id='remote-play-and-control' class='heading'>Remote Play and Control</h2>
+<p>This error can occur if the SDK is currently not subscribed (meaning authenticated) to the backend. This can occur after for example a disconnect or network issue and is thrown when you try to execute something without first reestablishing the connection.</p>
 
-<p>The SDK internally does not use any player provided by apple (AVPlayer or any other of the AVAudio). </p>
+<p><strong>To fix</strong> this, call the <code>connect</code> function or any appropriate function depending on the state of the app (see Observing background sate and network).</p>
+<h3 id='stream_not_found' class='heading'>STREAM_NOT_FOUND</h3>
 
-<p>Therefore the developer needs to decide if the remote control elements should be displayed and how.</p>
+<p>This error can occur when you try to perform any action on a specific stream, while the stream is either not known to the sdk or not available in the backend. It provides the streamId where this error occurred.</p>
 
-<p>The usage of the <code>MPNowPlayingInfoCenter</code> is recommended and to update the <code>nowPlayingInfo</code> property when the stream is started and ended as well to use the <code>MPRemoteCommandCenter</code> and register for play and pause events.</p>
+<p>This can happen during network issues.</p>
+
+<p>For example the user lost the connection to the backend, in the meantime the streamer closed the stream. Due not having network, the user is not informed that the stream is not available anymore.</p>
+
+<p>When the network is reestablished the user tries to play by hitting the play button of a stream that no longer exists.</p>
+
+<p><strong>To fix</strong> this you should always request the streams again after the SDK connection has been reestablished and if the error still occurrs try again. If this does not succeed, you can inform the user that the stream is no longer available</p>
+<h3 id='listen_failed' class='heading'>LISTEN_FAILED</h3>
+
+<p>The listening for the specific stream failed. This can happen for a number of reasons, for example network issues, the streamer just ended the stream, the streamer has network issues&hellip;.</p>
+
+<p>The error contains the streamId for the stream this problem happened</p>
+
+<p><strong>Potencial Fix</strong> You can retry after a short duration or check you internet connection. You could inform the user about the problem so that the user can try it again.</p>
+
+<p>You can request the streams again from the SDK and check if the list of streams still contains the streamId of the stream in question</p>
+<h3 id='internal' class='heading'>INTERNAL</h3>
+
+<p>Something went wrong. The error contains a description that tries to provide some feedback about what has gone wrong.</p>
+
+<p>You can not recover from this state and should display an information to the user that something has gone wrong.</p>
 
           </section>
         </section>

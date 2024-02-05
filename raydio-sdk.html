@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>  Reference</title>
+    <title>Raydio SDK  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,7 +13,7 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a title="  Reference"></a>
+    <a title="Raydio SDK  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
@@ -28,7 +28,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" alt=""/>
-          Reference
+        Raydio SDK  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -44,25 +44,25 @@
                 <a href="connecting-to-the-backend-and-receivng-the-streams.html">Connecting to the backend and receivng the streams</a>
               </li>
               <li class="nav-group-task">
-                <a href="error-handling.html">Error Handling</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="general-information.html">General Information</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="getting-started.html">Getting Started</a>
+                <a href="errorhandling.html">ErrorHandling</a>
               </li>
               <li class="nav-group-task">
                 <a href="how-to-start-a-stream.html">How to start a stream</a>
               </li>
               <li class="nav-group-task">
-                <a href="listening-to-a-stream.html">Listening to a stream</a>
+                <a href="listening_to_a_stream.html">Listening_to_a_stream</a>
               </li>
               <li class="nav-group-task">
                 <a href="logging.html">Logging</a>
               </li>
               <li class="nav-group-task">
                 <a href="observing-background-state-and-network.html">Observing background state and network</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="raydio-sdk.html">Raydio SDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="general_information.html">general_information</a>
               </li>
             </ul>
           </li>
@@ -90,7 +90,21 @@
                 <a href="Enums/RaydioSDKState.html">RaydioSDKState</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/WebsocketConnectionState.html">WebsocketConnectionState</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/WorkflowLogs.html">WorkflowLogs</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:14SwiftRaydioSDK15MediaSoupPlayerC">MediaSoupPlayer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Websocket.html">Websocket</a>
               </li>
             </ul>
           </li>
@@ -99,6 +113,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols/ErrorDelegate.html">ErrorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/InjectionKey.html">InjectionKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/ListenStateDelegate.html">ListenStateDelegate</a>
@@ -133,6 +150,12 @@
                 <a href="Structs.html#/s:14SwiftRaydioSDK14InteractionLogV">InteractionLog</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/Language.html">Language</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Livestream.html">Livestream</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/StreamGroup.html">StreamGroup</a>
               </li>
               <li class="nav-group-task">
@@ -154,6 +177,8 @@
 <p>This SDK will enable you to easily integrate listening to streams created via the mycrocast platform.</p>
 
 <p>Certain things however are left for the developer to do and will be detailed further below.</p>
+
+<p>[TOC]</p>
 <h2 id='getting-started' class='heading'>Getting started</h2>
 
 <p>To get started install the SDK via Cocoapods.</p>
@@ -163,12 +188,12 @@
 <p><code>import SwiftRaydioSDK</code></p>
 
 <p>After importing the source call the start function of the shared Instance providing the <strong>clubId</strong> and <strong>apiToken</strong> </p>
-<pre class="highlight swift"><code><span class="kt">RaydioSDK</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">start</span><span class="p">(</span><span class="n">clubId</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kt">RaydioSDK</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">start</span><span class="p">(</span><span class="n">clubId</span><span class="p">,</span> <span class="nv">apiToken</span><span class="p">:</span> <span class="n">apiToken</span><span class="p">)</span>
 </code></pre>
 
 <p>You will get the clubId and apiToken after registration from us.</p>
 
-<p>Calling the <code><a href="Classes/RaydioSDK.html#/s:14SwiftRaydioSDK0bC0C5startyAA0B12SDKProviding_pSiF">start(_:)</a></code> function will return <code><a href="Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a></code>store this somewhere as member variable because you will work only with this class from now on.</p>
+<p>Calling the <code>start</code> function will return <code><a href="Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a></code>store this somewhere as member variable because you will work only with this class from now on.</p>
 <h3 id='next-steps' class='heading'>Next Steps:</h3>
 
 <p>The SDK is now configured and you can start to connect to the backend to receive the streams and listen to the stream.</p>
@@ -429,14 +454,9 @@
 <p>Currently the provided matchId is always just &ldquo;0&rdquo;. This will change in the future update for our webplatform and backend but does not require any updates from the SDK</p>
 <h3 id='group-creation' class='heading'>Group creation</h3>
 
-<p>Currently to make a stream with multiple entries in the same stream, the title must match exactly. </p>
+<p>Currently to make a stream with multiple entries in the same stream, the title must match exactly. See (Link).</p>
 
 <p>An update from our Frontend will change the stream start process where the streamer just needs to select the language and game. This will follow shortly and again does not require any updates to the SDK.</p>
-<h2 id='how-to-test' class='heading'>How to test</h2>
-
-<p>To be able to test your implementation you need to start a stream via our web application.</p>
-
-<p>This is described <a href="General-Information">here</a> in detail  </p>
 
           </section>
         </section>

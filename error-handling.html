@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Error Handling  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="Error Handling  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" alt=""/>
+        Error Handling  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="accessibility.html">Accessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="connecting-to-the-backend-and-receivng-the-streams.html">Connecting to the backend and receivng the streams</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="error-handling.html">Error Handling</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="general-information.html">General Information</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="getting-started.html">Getting Started</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="how-to-start-a-stream.html">How to start a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="listening-to-a-stream.html">Listening to a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="logging.html">Logging</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="observing-background-state-and-network.html">Observing background state and network</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/RaydioSDK.html">RaydioSDK</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/InteractionType.html">InteractionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioError.html">RaydioError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioPlayState.html">RaydioPlayState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioSDKState.html">RaydioSDKState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/WorkflowLogs.html">WorkflowLogs</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ErrorDelegate.html">ErrorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ListenStateDelegate.html">ListenStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LogDelegate.html">LogDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RaydioSDKStateDelegate.html">RaydioSDKStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StreamGroupDelegate.html">StreamGroupDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StreamsProviding.html">StreamsProviding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK8ErrorLogV">ErrorLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14InformationLogV">InformationLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14InteractionLogV">InteractionLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StreamGroup.html">StreamGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StreamGroupEntry.html">StreamGroupEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14SystemErrorLogV">SystemErrorLog</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='error-handling' class='heading'>Error handling</h1>
+
+<p>A short overview of the errors that can occur and what can be done.</p>
+<h3 id='getting-started' class='heading'>Getting started</h3>
+
+<p>To start receiving errors that are thrown from the SDK you need to register the corresponding <code><a href="Protocols/ErrorDelegate.html">ErrorDelegate</a></code> on the <code><a href="Protocols/RaydioSDKProviding.html#/s:14SwiftRaydioSDK0B12SDKProvidingP13errorDelegateAA05ErrorF0_pSgvp">errorDelegate</a></code></p>
+<pre class="highlight swift"><code><span class="c1">/// Implement this delegate to receive errors thrown by the</span>
+<span class="c1">/// SDK</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ErrorDelegate</span> <span class="p">{</span>
+
+    <span class="c1">/// called when an actual error occured</span>
+    <span class="kd">func</span> <span class="nf">onRaydioError</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The function receives either a low level error from the system or an error of type <code><a href="Enums/RaydioError.html">RaydioError</a></code></p>
+<h2 id='raydioerror' class='heading'>RaydioError</h2>
+
+<p>The possible values for the error are displayed below:</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents an error state of the SDK</span>
+<span class="c1">/// Most of the error states can be gracefully processed</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RaydioError</span><span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Error</span> <span class="p">{</span>
+    <span class="c1">/// We are not subscribed to the backend, meaning all requests that we</span>
+    <span class="c1">/// send are just rejected.</span>
+    <span class="c1">/// This could happen if the sdk is not connected or in the disconnected state</span>
+    <span class="c1">/// A connect call should fix this</span>
+    <span class="k">case</span> <span class="kt">NOT_SUBSCRIBED</span>
+
+    <span class="c1">/// We tried to play/pause a stream that is not existing anymore</span>
+    <span class="c1">/// This could happen for several reasons, all of them involve network issues on</span>
+    <span class="c1">/// either the streamer or listener side</span>
+    <span class="c1">/// A potential workflow could be to request the current streams from the backend again, and if the</span>
+    <span class="c1">/// List contains the clicked streamId play it and if not display a message</span>
+    <span class="k">case</span> <span class="kt">STREAM_NOT_FOUND</span><span class="p">(</span><span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
+    <span class="c1">/// Listening failed for the stream.</span>
+    <span class="c1">/// In the Log or ListenStageDelegate more information should be provided why.</span>
+    <span class="c1">/// The problem could be that the streamer closed during connection the stream or that network issues occurred.</span>
+    <span class="c1">/// The same solution as for STREAM_NOT_FOUND could be applied</span>
+    <span class="k">case</span> <span class="kt">LISTEN_FAILED</span><span class="p">(</span><span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+
+    <span class="c1">/// Something internally went wrong and the logs could provide more information.</span>
+    <span class="c1">/// There is no recovery possible of the action and just an information could be displayed</span>
+    <span class="k">case</span> <span class="kt">INTERNAL</span><span class="p">(</span><span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='code-raydioerror-not_subscribed-code' class='heading'><code><a href="Enums/RaydioError.html#/s:14SwiftRaydioSDK0B5ErrorO14NOT_SUBSCRIBEDyA2CmF">NOT_SUBSCRIBED</a></code></h3>
+
+<p>This error can occur if the SDK is currently not subscribed (meaning authenticated) to the backend. This can occur after for example a disconnect or network issue and is thrown when you try to execute something without first reestablishing the connection.</p>
+
+<p><strong>To fix</strong> this, call the <code><a href="Protocols/RaydioSDKProviding.html#/s:14SwiftRaydioSDK0B12SDKProvidingP7connectyyF">connect()</a></code> function or any appropriate function depending on the state of the app (see Observing background sate and network).</p>
+<h3 id='code-raydioerror-stream_not_found-streamid-code' class='heading'><code><a href="Enums/RaydioError.html#/s:14SwiftRaydioSDK0B5ErrorO16STREAM_NOT_FOUNDyACSS_tcACmF">STREAM_NOT_FOUND(streamId:)</a></code></h3>
+
+<p>This error can occur when you try to perform any action on a specific stream, while the stream is either not known to the sdk or not available in the backend. It provides the streamId where this error occurred.</p>
+
+<p>This can happen during network issues.</p>
+
+<p>For example the user lost the connection to the backend, in the meantime the streamer closed the stream. Due not having network, the user is not informed that the stream is not available anymore.</p>
+
+<p>When the network is reestablished the user tries to play by hitting the play button of a stream that no longer exists.</p>
+
+<p><strong>To fix</strong> this you should always request the streams again after the SDK connection has been reestablished and if the error still occurrs try again. If this does not succeed, you can inform the user that the stream is no longer available</p>
+<h3 id='code-raydioerror-listen_failed-streamid-code' class='heading'><code><a href="Enums/RaydioError.html#/s:14SwiftRaydioSDK0B5ErrorO13LISTEN_FAILEDyACSS_tcACmF">LISTEN_FAILED(streamId:)</a></code></h3>
+
+<p>The listening for the specific stream failed. This can happen for a number of reasons, for example network issues, the streamer just ended the stream, the streamer has network issues&hellip;.</p>
+
+<p>The error contains the streamId for the stream this problem happened</p>
+
+<p><strong>Potencial Fix</strong> You can retry after a short duration or check you internet connection. You could inform the user about the problem so that the user can try it again.</p>
+
+<p>You can request the streams again from the SDK and check if the list of streams still contains the streamId of the stream in question</p>
+<h3 id='code-raydioerror-internal-description-code' class='heading'><code><a href="Enums/RaydioError.html#/s:14SwiftRaydioSDK0B5ErrorO8INTERNALyACSS_tcACmF">INTERNAL(description:)</a></code></h3>
+
+<p>Something went wrong. The error contains a description that tries to provide some feedback about what has gone wrong.</p>
+
+<p>You can not recover from this state and should display an information to the user that something has gone wrong.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

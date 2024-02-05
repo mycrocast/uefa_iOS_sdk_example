@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Accessibility  Reference</title>
+    <title>How to start a stream  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,7 +13,7 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a title="Accessibility  Reference"></a>
+    <a title="How to start a stream  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
@@ -28,7 +28,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" alt=""/>
-        Accessibility  Reference
+        How to start a stream  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -149,56 +149,49 @@
         <section>
           <section class="section">
             
-            <h1 id='accessibility' class='heading'>Accessibility</h1>
+            <h1 id='general-information' class='heading'>General Information</h1>
 
-<p>As the goal is to make this feature work for visually impaired people we need to take into consideration the accessibility aspect.</p>
+<p>This document contains a few general information which are not specific to the Android or iOS SDK but should help testing and highlight some current shortcomings.</p>
+<h2 id='how-to-start-a-stream' class='heading'>How to start a stream</h2>
+<h2 id='login' class='heading'>Login</h2>
 
-<p>Below are some things to consider while developing the UI as the SDK does not provide any accessibility functionality out of the box.</p>
-<h2 id='how-to-use-the-voiceover' class='heading'>How to use the VoiceOver</h2>
+<p>Visit <a href="http://www.mycrocast.de">www.mycrocast.de</a> and in the upper tab select &ldquo;Streamer&rdquo; and login with the credentials provided.</p>
+<h2 id='start-stream' class='heading'>Start stream</h2>
 
-<p>A short introduction on to how to use the functionality on iOS to get you started with testing.</p>
-
-<p>You move in lists while swiping with 2 fingers to right or left to move up or down the list.</p>
-
-<p>You click something when having the button focused and one finger on the screen and tap with the second finger to confirm.</p>
-
-<p>Use swipe with 3 fingers up or down to scroll.</p>
-<h2 id='font-size' class='heading'>Font size</h2>
-
-<p>There are people who are using a magnifing glass and read the text letter by letter.</p>
-
-<p>Therefore a larger font size should be used and line breaks within a word should be avoided at all cost</p>
-<h2 id='contrast' class='heading'>Contrast</h2>
-
-<p>A higher contrast can help people navigate better and identify areas of interest.</p>
-
-<p>This could be for example a white play button on a black background.</p>
-
-<p>The Image of the play button should also be a lot bigger.</p>
-<h2 id='screenreader' class='heading'>Screenreader</h2>
-
-<p>You can easily test your application with the screenreader enabled in iOS.</p>
-
-<p>Things to consider for screenreader:</p>
+<p>Hit the stream start button and </p>
 
 <ul>
-<li><p>Are there visual elements with no information? Disable them for the screenreader in UIKit you would do this with <code>isAccessibilityElement = false</code></p></li>
-<li><p>Add information to any icon that displays a state - e.g. a play button displaying the play icon. You can do this in UIKit with <code>accessibilityLabel</code> </p></li>
-<li><p>A text has changed on the screen? You can refocus it to force the screenreader to read it again. This would be done in UIKit with <code> UIAccessibility.post(notification: .screenChanged, argument: THE_LABEL)</code></p></li>
-<li><p>Keep the focus in the overlay if displayed. If you display a bottom sheet or a popup dialog you should use a focus trap (if not provided by the system) so that the user cannot navigate out of the element with the screenreader</p></li>
-<li><p>Use the correct elements or at least provide the correct roles. If you have an element that you can click and it is not a button you need to provide the correct traits. In UIKit it would be <code>accessibilityTraits</code> .  Why? Because the screenreader would read first the text of the button and afterwards &lsquo;Button&rsquo; or &lsquo;Taste&rsquo; in german. This is mandatory for the user to know, that this element is clickable.</p></li>
-<li><p>Everything above will have something similar in SwiftUI</p></li>
+<li><p>Select a genre </p></li>
+<li><p>Select a language</p></li>
+<li><p>Select Event</p></li>
+<li><p>Enter a title</p></li>
+<li><p>Select a microphone</p></li>
+<li><p>Hit conintue -&gt; you are live a few moments later</p></li>
 </ul>
-<h2 id='announcer' class='heading'>Announcer</h2>
+<h2 id='use-audio-file-as-content' class='heading'>Use audio file as content</h2>
 
-<p>Sometimes it makes sense to announce something for the user (spoken by the system).</p>
+<p>You can instead of your own voice use an audio file that is than broadcasted.</p>
 
-<p>Below are some consideration when to use this functionality.</p>
+<p>To do so: </p>
 
 <ul>
-<li><p>Something changed in the UI state without the interaction of the user. For example a new StreamGroup was added. You could announce that information (but maybe only when the user is not activly listening to another stream)</p></li>
-<li><p>A state has changed e.g. the Stream that the user is currently listening too has ended and was removed.</p></li>
+<li><p>Drag and drop a file into the upper right corner of the webseit </p></li>
+<li><p>Hit the play button on the entry that appeared there</p></li>
 </ul>
+<h2 id='how-to-create-multiple-entries-in-the-same-group' class='heading'>How to create multiple entries in the same group</h2>
+
+<p>You need to create multiple streams, you need to log in with different users in different tabs.</p>
+
+<p>Each stream must have the EXACT same title.</p>
+<h4 id='current-shortcomings' class='heading'>Current shortcomings</h4>
+<h3 id='matchid' class='heading'>MatchId</h3>
+
+<p>Currently the provided matchId is always just &ldquo;0&rdquo;. This will change in the future update for our webplatform and backend but does not require any updates from the SDK</p>
+<h3 id='group-creation' class='heading'>Group creation</h3>
+
+<p>Currently to make a stream with multiple entries in the same stream, the title must match exactly. See (Link).</p>
+
+<p>An update from our Frontend will change the stream start process where the streamer just needs to select the language and game. This will follow shortly and again does not require any updates to the SDK.</p>
 
           </section>
         </section>

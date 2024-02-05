@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RaydioSDKProviding Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/RaydioSDKProviding" class="dashAnchor"></a>
+    <a title="RaydioSDKProviding Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        RaydioSDKProviding Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../accessibility.html">Accessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../connecting-to-the-backend-and-receivng-the-streams.html">Connecting to the backend and receivng the streams</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../error-handling.html">Error Handling</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../general-information.html">General Information</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../getting-started.html">Getting Started</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../how-to-start-a-stream.html">How to start a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../listening-to-a-stream.html">Listening to a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../logging.html">Logging</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../observing-background-state-and-network.html">Observing background state and network</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/RaydioSDK.html">RaydioSDK</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/InteractionType.html">InteractionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RaydioError.html">RaydioError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RaydioPlayState.html">RaydioPlayState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RaydioSDKState.html">RaydioSDKState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/WorkflowLogs.html">WorkflowLogs</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ErrorDelegate.html">ErrorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ListenStateDelegate.html">ListenStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LogDelegate.html">LogDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/RaydioSDKStateDelegate.html">RaydioSDKStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamGroupDelegate.html">StreamGroupDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StreamsProviding.html">StreamsProviding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14SwiftRaydioSDK8ErrorLogV">ErrorLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14SwiftRaydioSDK14InformationLogV">InformationLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14SwiftRaydioSDK14InteractionLogV">InteractionLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StreamGroup.html">StreamGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StreamGroupEntry.html">StreamGroupEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14SwiftRaydioSDK14SystemErrorLogV">SystemErrorLog</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RaydioSDKProviding</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RaydioSDKProviding</span></code></pre>
+
+                </div>
+              </div>
+            <p>Main protocol to work with and providing all required functions for
+the usage of the sdk</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP13raydioStreamsAA0F9Providing_pvp"></a>
+                    <a name="//apple_ref/swift/Property/raydioStreams" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP13raydioStreamsAA0F9Providing_pvp">raydioStreams</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>get access to the streams protocol</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">raydioStreams</span><span class="p">:</span> <span class="kt"><a href="../Protocols/StreamsProviding.html">StreamsProviding</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP8skdStateAA0B8SDKStateOvp"></a>
+                    <a name="//apple_ref/swift/Property/skdState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP8skdStateAA0B8SDKStateOvp">skdState</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The current state of the sdk</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">skdState</span><span class="p">:</span> <span class="kt"><a href="../Enums/RaydioSDKState.html">RaydioSDKState</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP12activeStreamSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/activeStream" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP12activeStreamSSSgvp">activeStream</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The id of the current stream, if there is currently an active stream</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">activeStream</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP21listenerStateDelegateAA06ListenfG0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/listenerStateDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP21listenerStateDelegateAA06ListenfG0_pSgvp">listenerStateDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property to set the listener delegate to
+This is required to receive updates for the listening state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">listenerStateDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ListenStateDelegate.html">ListenStateDelegate</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP11logDelegateAA03LogF0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/logDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP11logDelegateAA03LogF0_pSgvp">logDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the log delegate to start receiving log related information</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">logDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LogDelegate.html">LogDelegate</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP13errorDelegateAA05ErrorF0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/errorDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP13errorDelegateAA05ErrorF0_pSgvp">errorDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the delegate to start receiving error related information</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">errorDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ErrorDelegate.html">ErrorDelegate</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP16sdkStateDelegateAA0b8SDKStateG0_pSgvp"></a>
+                    <a name="//apple_ref/swift/Property/sdkStateDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP16sdkStateDelegateAA0b8SDKStateG0_pSgvp">sdkStateDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the delegate to receive information about the sdk state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sdkStateDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RaydioSDKStateDelegate.html">RaydioSDKStateDelegate</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP7connectyyF"></a>
+                    <a name="//apple_ref/swift/Method/connect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP7connectyyF">connect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This will connect the sdk to the backend, if the current state is not connected
+Otherwise it will do nothing</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">connect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP4playyySSF"></a>
+                    <a name="//apple_ref/swift/Method/play(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP4playyySSF">play(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tries to start playing the stream with the provided streamId
+This may fail for different reasons either because the stream is not found
+or connection problems. You will receive this information in the listenStateDelegate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">_</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP5pauseyyF"></a>
+                    <a name="//apple_ref/swift/Method/pause()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP5pauseyyF">pause()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pause the currently active stream</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">pause</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP14requestStreamsyyF"></a>
+                    <a name="//apple_ref/swift/Method/requestStreams()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP14requestStreamsyyF">requestStreams()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Request the streams available from the backend
+This function should be executed each time, that the sdk changes its state to
+connected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">requestStreams</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP9reconnectyyF"></a>
+                    <a name="//apple_ref/swift/Method/reconnect()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP9reconnectyyF">reconnect()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">reconnect</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP16onConnectionLostyyF"></a>
+                    <a name="//apple_ref/swift/Method/onConnectionLost()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP16onConnectionLostyyF">onConnectionLost()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Call this function when you observed a connection loss.
+This will clean up some internal states and prepare for a potencial reconnect when network is available again</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onConnectionLost</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP25onConnectionReestablishedyyF"></a>
+                    <a name="//apple_ref/swift/Method/onConnectionReestablished()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP25onConnectionReestablishedyyF">onConnectionReestablished()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>call this function when you discovered that the network is available again</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onConnectionReestablished</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP19onBackgroundEnteredyyF"></a>
+                    <a name="//apple_ref/swift/Method/onBackgroundEntered()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP19onBackgroundEnteredyyF">onBackgroundEntered()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>call this when you observe the app moving to the background
+as this will free some unneeded ressources to preserve battery</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onBackgroundEntered</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP19onForegroundEnteredyyF"></a>
+                    <a name="//apple_ref/swift/Method/onForegroundEntered()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP19onForegroundEnteredyyF">onForegroundEntered()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>call when moving to the foreground</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onForegroundEntered</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14SwiftRaydioSDK0B12SDKProvidingP9isPlayingySbSSF"></a>
+                    <a name="//apple_ref/swift/Method/isPlaying(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14SwiftRaydioSDK0B12SDKProvidingP9isPlayingySbSSF">isPlaying(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>returns true if the current stream id matches the provided id</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isPlaying</span><span class="p">(</span><span class="n">_</span> <span class="nv">streamId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

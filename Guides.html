@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Accessibility  Reference</title>
+    <title>Guides  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,7 +13,8 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a title="Accessibility  Reference"></a>
+    <a name="//apple_ref/swift/Section/Guides" class="dashAnchor"></a>
+    <a title="Guides  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
@@ -28,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" alt=""/>
-        Accessibility  Reference
+        Guides  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -148,58 +149,96 @@
       <article class="main-content">
         <section>
           <section class="section">
-            
-            <h1 id='accessibility' class='heading'>Accessibility</h1>
+            <h1>Guides</h1>
+            <p>The following guides are available globally.</p>
 
-<p>As the goal is to make this feature work for visually impaired people we need to take into consideration the accessibility aspect.</p>
-
-<p>Below are some things to consider while developing the UI as the SDK does not provide any accessibility functionality out of the box.</p>
-<h2 id='how-to-use-the-voiceover' class='heading'>How to use the VoiceOver</h2>
-
-<p>A short introduction on to how to use the functionality on iOS to get you started with testing.</p>
-
-<p>You move in lists while swiping with 2 fingers to right or left to move up or down the list.</p>
-
-<p>You click something when having the button focused and one finger on the screen and tap with the second finger to confirm.</p>
-
-<p>Use swipe with 3 fingers up or down to scroll.</p>
-<h2 id='font-size' class='heading'>Font size</h2>
-
-<p>There are people who are using a magnifing glass and read the text letter by letter.</p>
-
-<p>Therefore a larger font size should be used and line breaks within a word should be avoided at all cost</p>
-<h2 id='contrast' class='heading'>Contrast</h2>
-
-<p>A higher contrast can help people navigate better and identify areas of interest.</p>
-
-<p>This could be for example a white play button on a black background.</p>
-
-<p>The Image of the play button should also be a lot bigger.</p>
-<h2 id='screenreader' class='heading'>Screenreader</h2>
-
-<p>You can easily test your application with the screenreader enabled in iOS.</p>
-
-<p>Things to consider for screenreader:</p>
-
-<ul>
-<li><p>Are there visual elements with no information? Disable them for the screenreader in UIKit you would do this with <code>isAccessibilityElement = false</code></p></li>
-<li><p>Add information to any icon that displays a state - e.g. a play button displaying the play icon. You can do this in UIKit with <code>accessibilityLabel</code> </p></li>
-<li><p>A text has changed on the screen? You can refocus it to force the screenreader to read it again. This would be done in UIKit with <code> UIAccessibility.post(notification: .screenChanged, argument: THE_LABEL)</code></p></li>
-<li><p>Keep the focus in the overlay if displayed. If you display a bottom sheet or a popup dialog you should use a focus trap (if not provided by the system) so that the user cannot navigate out of the element with the screenreader</p></li>
-<li><p>Use the correct elements or at least provide the correct roles. If you have an element that you can click and it is not a button you need to provide the correct traits. In UIKit it would be <code>accessibilityTraits</code> .  Why? Because the screenreader would read first the text of the button and afterwards &lsquo;Button&rsquo; or &lsquo;Taste&rsquo; in german. This is mandatory for the user to know, that this element is clickable.</p></li>
-<li><p>Everything above will have something similar in SwiftUI</p></li>
-</ul>
-<h2 id='announcer' class='heading'>Announcer</h2>
-
-<p>Sometimes it makes sense to announce something for the user (spoken by the system).</p>
-
-<p>Below are some consideration when to use this functionality.</p>
-
-<ul>
-<li><p>Something changed in the UI state without the interaction of the user. For example a new StreamGroup was added. You could announce that information (but maybe only when the user is not activly listening to another stream)</p></li>
-<li><p>A state has changed e.g. the Stream that the user is currently listening too has ended and was removed.</p></li>
-</ul>
-
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Listening to a stream"></a>
+                    <a name="//apple_ref/swift/Guide/Listening to a stream" class="dashAnchor"></a>
+                    <a class="direct-link" href="listening-to-a-stream.html">Listening to a stream</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.How to start a stream"></a>
+                    <a name="//apple_ref/swift/Guide/How to start a stream" class="dashAnchor"></a>
+                    <a class="direct-link" href="how-to-start-a-stream.html">How to start a stream</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Accessibility"></a>
+                    <a name="//apple_ref/swift/Guide/Accessibility" class="dashAnchor"></a>
+                    <a class="direct-link" href="accessibility.html">Accessibility</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.General Information"></a>
+                    <a name="//apple_ref/swift/Guide/General Information" class="dashAnchor"></a>
+                    <a class="direct-link" href="general-information.html">General Information</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Getting Started"></a>
+                    <a name="//apple_ref/swift/Guide/Getting Started" class="dashAnchor"></a>
+                    <a class="direct-link" href="getting-started.html">Getting Started</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Observing background state and network"></a>
+                    <a name="//apple_ref/swift/Guide/Observing background state and network" class="dashAnchor"></a>
+                    <a class="direct-link" href="observing-background-state-and-network.html">Observing background state and network</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Logging"></a>
+                    <a name="//apple_ref/swift/Guide/Logging" class="dashAnchor"></a>
+                    <a class="direct-link" href="logging.html">Logging</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Error Handling"></a>
+                    <a name="//apple_ref/swift/Guide/Error Handling" class="dashAnchor"></a>
+                    <a class="direct-link" href="error-handling.html">Error Handling</a>
+                    </code>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/documentation.Connecting to the backend and receivng the streams"></a>
+                    <a name="//apple_ref/swift/Guide/Connecting to the backend and receivng the streams" class="dashAnchor"></a>
+                    <a class="direct-link" href="connecting-to-the-backend-and-receivng-the-streams.html">Connecting to the backend and receivng the streams</a>
+                    </code>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">

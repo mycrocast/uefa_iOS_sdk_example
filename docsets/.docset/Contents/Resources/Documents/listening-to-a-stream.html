@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Accessibility  Reference</title>
+    <title>Listening to a stream  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,7 +13,7 @@
     <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a title="Accessibility  Reference"></a>
+    <a title="Listening to a stream  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
@@ -28,7 +28,7 @@
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
         <img id="carat" src="img/carat.png" alt=""/>
-        Accessibility  Reference
+        Listening to a stream  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -149,56 +149,57 @@
         <section>
           <section class="section">
             
-            <h1 id='accessibility' class='heading'>Accessibility</h1>
+            <h1 id='listening-to-a-stream' class='heading'>Listening to a stream</h1>
 
-<p>As the goal is to make this feature work for visually impaired people we need to take into consideration the accessibility aspect.</p>
+<p>You app should have the background capability audio enabled </p>
 
-<p>Below are some things to consider while developing the UI as the SDK does not provide any accessibility functionality out of the box.</p>
-<h2 id='how-to-use-the-voiceover' class='heading'>How to use the VoiceOver</h2>
+<p>and you should configure the audio session:</p>
+<pre class="highlight swift"><code>  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">configureAudioSession</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="k">try</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setCategory</span><span class="p">(</span><span class="o">.</span><span class="n">playback</span><span class="p">)</span>
+            <span class="k">try</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setActive</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
 
-<p>A short introduction on to how to use the functionality on iOS to get you started with testing.</p>
+<p>After receiving the streams you can start listen to a stream by providing the corresponding <code><a href="Structs/StreamGroupEntry.html#/s:14SwiftRaydioSDK16StreamGroupEntryV8streamIdSSvp">streamId</a></code> of the <code><a href="Structs/StreamGroupEntry.html">StreamGroupEntry</a></code> to the <code><a href="Protocols/RaydioSDKProviding.html#/s:14SwiftRaydioSDK0B12SDKProvidingP4playyySSF">play(_:)</a></code> function of the sdk.</p>
 
-<p>You move in lists while swiping with 2 fingers to right or left to move up or down the list.</p>
+<p>To receive updates of the play state you first should register the corresponding delegate to receive state updates.</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ListenStateDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">onListenStageChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">playState</span><span class="p">:</span> <span class="kt">RaydioPlayState</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RaydioPlayState</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">playing</span> <span class="c1">// we are currently playing</span>
+    <span class="k">case</span> <span class="n">idle</span> <span class="c1">// initial state</span>
+    <span class="k">case</span> <span class="n">connecting</span> <span class="c1">// in process of connecting</span>
+    <span class="k">case</span> <span class="nf">failed</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">RaydioError</span><span class="p">)</span> <span class="c1">// something might went wrong</span>
+    <span class="k">case</span> <span class="n">paused</span> <span class="c1">// was connected, now paused</span>
+    <span class="k">case</span> <span class="n">disconnected</span> <span class="c1">// not connected anymore</span>
+<span class="p">}</span>
+</code></pre>
 
-<p>You click something when having the button focused and one finger on the screen and tap with the second finger to confirm.</p>
+<p>A description of <code><a href="Enums/RaydioError.html">RaydioError</a></code> can be found <a href="error-handling.html">here</a></p>
 
-<p>Use swipe with 3 fingers up or down to scroll.</p>
-<h2 id='font-size' class='heading'>Font size</h2>
+<p>To register the delegate use the. <code><a href="Protocols/RaydioSDKProviding.html#/s:14SwiftRaydioSDK0B12SDKProvidingP21listenerStateDelegateAA06ListenfG0_pSgvp">listenerStateDelegate</a></code> property of the sdk.</p>
 
-<p>There are people who are using a magnifing glass and read the text letter by letter.</p>
+<p>This needs to be done only once.</p>
+<h3 id='the-disconnected-state' class='heading'>The disconnected state</h3>
 
-<p>Therefore a larger font size should be used and line breaks within a word should be avoided at all cost</p>
-<h2 id='contrast' class='heading'>Contrast</h2>
+<p>The <code><a href="Enums/RaydioPlayState.html#/s:14SwiftRaydioSDK0B9PlayStateO12disconnectedyA2CmF">disconnected</a></code> state can be normal in case the listener paused. Otherwise this can be based on network issues of either the listener or streamer.</p>
+<h3 id='the-failed-state' class='heading'>The failed state</h3>
 
-<p>A higher contrast can help people navigate better and identify areas of interest.</p>
+<p>The <code><a href="Enums/RaydioPlayState.html#/s:14SwiftRaydioSDK0B9PlayStateO6failedyAcA0B5ErrorO_tcACmF">failed(error:)</a></code> can follow the disconnected state and represents a broken audio connection where a automatic reconnection is not possible.</p>
 
-<p>This could be for example a white play button on a black background.</p>
+<p>Most of the time this reprents that either for example the streamer stopped, has network issues or you can have network issues.</p>
+<h2 id='remote-play-and-control' class='heading'>Remote Play and Control</h2>
 
-<p>The Image of the play button should also be a lot bigger.</p>
-<h2 id='screenreader' class='heading'>Screenreader</h2>
+<p>The SDK internally does not use any player provided by apple (AVPlayer or any other of the AVAudio). </p>
 
-<p>You can easily test your application with the screenreader enabled in iOS.</p>
+<p>Therefore the developer needs to decide if the remote control elements should be displayed and how.</p>
 
-<p>Things to consider for screenreader:</p>
-
-<ul>
-<li><p>Are there visual elements with no information? Disable them for the screenreader in UIKit you would do this with <code>isAccessibilityElement = false</code></p></li>
-<li><p>Add information to any icon that displays a state - e.g. a play button displaying the play icon. You can do this in UIKit with <code>accessibilityLabel</code> </p></li>
-<li><p>A text has changed on the screen? You can refocus it to force the screenreader to read it again. This would be done in UIKit with <code> UIAccessibility.post(notification: .screenChanged, argument: THE_LABEL)</code></p></li>
-<li><p>Keep the focus in the overlay if displayed. If you display a bottom sheet or a popup dialog you should use a focus trap (if not provided by the system) so that the user cannot navigate out of the element with the screenreader</p></li>
-<li><p>Use the correct elements or at least provide the correct roles. If you have an element that you can click and it is not a button you need to provide the correct traits. In UIKit it would be <code>accessibilityTraits</code> .  Why? Because the screenreader would read first the text of the button and afterwards &lsquo;Button&rsquo; or &lsquo;Taste&rsquo; in german. This is mandatory for the user to know, that this element is clickable.</p></li>
-<li><p>Everything above will have something similar in SwiftUI</p></li>
-</ul>
-<h2 id='announcer' class='heading'>Announcer</h2>
-
-<p>Sometimes it makes sense to announce something for the user (spoken by the system).</p>
-
-<p>Below are some consideration when to use this functionality.</p>
-
-<ul>
-<li><p>Something changed in the UI state without the interaction of the user. For example a new StreamGroup was added. You could announce that information (but maybe only when the user is not activly listening to another stream)</p></li>
-<li><p>A state has changed e.g. the Stream that the user is currently listening too has ended and was removed.</p></li>
-</ul>
+<p>The usage of the <code>MPNowPlayingInfoCenter</code> is recommended and to update the <code>nowPlayingInfo</code> property when the stream is started and ended as well to use the <code>MPRemoteCommandCenter</code> and register for play and pause events.</p>
 
           </section>
         </section>
