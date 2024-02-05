@@ -1,0 +1,11 @@
+framework module SwiftRaydioSDK {
+  umbrella header "SwiftRaydioSDK.h"
+  export *
+
+  module * { export * }
+}
+
+module SwiftRaydioSDK.Swift {
+  header "SwiftRaydioSDK-Swift.h"
+  requires objc
+}

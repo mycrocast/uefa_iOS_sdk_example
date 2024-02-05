@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_UefaRaydioSDKExample_UefaRaydioSDKExampleUITests : NSObject
+@end
+@implementation PodsDummy_Pods_UefaRaydioSDKExample_UefaRaydioSDKExampleUITests
+@end

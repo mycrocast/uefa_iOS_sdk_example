@@ -1,0 +1,3 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/SwiftRaydioSDK.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/Mediasoup.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/WebRTC.framework

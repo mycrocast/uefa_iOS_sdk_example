@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/SwiftRaydioSDK/SwiftRaydioSDK-xcframeworks.sh
+${PODS_ROOT}/SwiftRaydioSDK/SwiftRaydioSDK.xcframework
+${PODS_ROOT}/SwiftRaydioSDK/deps/Mediasoup.xcframework
+${PODS_ROOT}/SwiftRaydioSDK/deps/WebRTC.xcframework

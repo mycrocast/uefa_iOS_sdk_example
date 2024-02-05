@@ -1,0 +1,158 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftRaydioSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+import Foundation
+import Mediasoup
+import Swift
+@_exported import SwiftRaydioSDK
+import WebRTC
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum WorkflowLogs {
+  case connecting
+  case subscribing
+  case streams
+  case playing
+  public static func == (a: SwiftRaydioSDK.WorkflowLogs, b: SwiftRaydioSDK.WorkflowLogs) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol LogDelegate {
+  func onInformationLog(_ information: SwiftRaydioSDK.InformationLog)
+  func onErrorLog(_ error: SwiftRaydioSDK.ErrorLog)
+  func onInteractionLog(_ interaction: SwiftRaydioSDK.InteractionLog)
+  func onSystemErrorLog(_ systemError: SwiftRaydioSDK.SystemErrorLog)
+}
+public protocol RaydioSDKStateDelegate {
+  func onRaydioSDKStateChanged(_ state: SwiftRaydioSDK.RaydioSDKState)
+}
+public enum RaydioSDKState : Swift.Equatable {
+  case idle
+  case connected
+  case disconnected
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SwiftRaydioSDK.RaydioSDKState, b: SwiftRaydioSDK.RaydioSDKState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Livestream : Swift.Decodable {
+  public var language: SwiftRaydioSDK.Language
+  public var isMuted: Swift.Bool
+  public var title: Swift.String
+  public var streamId: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Language : Swift.Decodable {
+  public var native: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ErrorLog {
+}
+public struct InformationLog {
+}
+@_hasMissingDesignatedInitializers public class RaydioSDK {
+  public static let shared: SwiftRaydioSDK.RaydioSDK
+  public func start(_ clubId: Swift.Int) -> any SwiftRaydioSDK.RaydioSDKProviding
+  @objc deinit
+}
+public enum WebsocketConnectionState {
+  case none
+  case connecting
+  case connected
+  case disconnected
+  public static func == (a: SwiftRaydioSDK.WebsocketConnectionState, b: SwiftRaydioSDK.WebsocketConnectionState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol RaydioSDKProviding {
+  var raydioStreams: any SwiftRaydioSDK.StreamsProviding { get }
+  var skdState: SwiftRaydioSDK.RaydioSDKState { get }
+  var activeStream: Swift.String? { get }
+  var listenerStateDelegate: (any SwiftRaydioSDK.ListenStateDelegate)? { get set }
+  var logDelegate: (any SwiftRaydioSDK.LogDelegate)? { get set }
+  var errorDelegate: (any SwiftRaydioSDK.ErrorDelegate)? { get set }
+  var sdkStateDelegate: (any SwiftRaydioSDK.RaydioSDKStateDelegate)? { get set }
+  func connect()
+  func play(_ streamId: Swift.String)
+  func pause()
+  func requestStreams()
+  func reconnect()
+  func onConnectionLost()
+  func onConnectionReestablished()
+  func onBackgroundEntered()
+  func onForegroundEntered()
+  func isPlaying(_ streamId: Swift.String) -> Swift.Bool
+}
+public enum RaydioPlayState : Swift.Equatable {
+  case playing
+  case idle
+  case connecting
+  case failed(error: SwiftRaydioSDK.RaydioError)
+  case paused
+  case disconnected
+  public static func == (a: SwiftRaydioSDK.RaydioPlayState, b: SwiftRaydioSDK.RaydioPlayState) -> Swift.Bool
+}
+public struct StreamGroupEntry {
+  public var language: Swift.String
+  public var streamId: Swift.String
+  public var isMuted: Swift.Bool
+}
+public protocol InjectionKey {
+  associatedtype Value
+  static var currentValue: Self.Value { get set }
+}
+public protocol StreamsProviding {
+  var groups: [SwiftRaydioSDK.StreamGroup] { get }
+  var delegate: (any SwiftRaydioSDK.StreamGroupDelegate)? { get set }
+}
+public struct InteractionLog {
+}
+public enum InteractionType {
+  case play
+  case pause
+  public static func == (a: SwiftRaydioSDK.InteractionType, b: SwiftRaydioSDK.InteractionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RaydioError : Swift.Equatable, Swift.Error {
+  case NOT_SUBSCRIBED
+  case STREAM_NOT_FOUND(streamId: Swift.String)
+  case LISTEN_FAILED(streamId: Swift.String)
+  case INTERNAL(description: Swift.String)
+  public static func == (a: SwiftRaydioSDK.RaydioError, b: SwiftRaydioSDK.RaydioError) -> Swift.Bool
+}
+public protocol ErrorDelegate {
+  func onRaydioError(_ error: any Swift.Error)
+}
+public struct StreamGroup {
+  public var title: Swift.String
+  public var entries: [SwiftRaydioSDK.StreamGroupEntry]
+}
+public protocol StreamGroupDelegate {
+  func onNewGroup(_ group: SwiftRaydioSDK.StreamGroup)
+  func onGroupUpdated(_ group: SwiftRaydioSDK.StreamGroup)
+  func onGroupRemoved(_ group: SwiftRaydioSDK.StreamGroup)
+  func onGroupsReceived(_ groups: [SwiftRaydioSDK.StreamGroup])
+}
+public protocol ListenStateDelegate {
+  func onListenStageChanged(_ playState: SwiftRaydioSDK.RaydioPlayState)
+}
+public struct SystemErrorLog {
+}
+extension SwiftRaydioSDK.WorkflowLogs : Swift.Equatable {}
+extension SwiftRaydioSDK.WorkflowLogs : Swift.Hashable {}
+extension SwiftRaydioSDK.RaydioSDKState : Swift.Hashable {}
+extension SwiftRaydioSDK.WebsocketConnectionState : Swift.Equatable {}
+extension SwiftRaydioSDK.WebsocketConnectionState : Swift.Hashable {}
+extension SwiftRaydioSDK.InteractionType : Swift.Equatable {}
+extension SwiftRaydioSDK.InteractionType : Swift.Hashable {}

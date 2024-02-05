@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-UefaRaydioSDKExample/Pods-UefaRaydioSDKExample-frameworks.sh
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/SwiftRaydioSDK.framework/SwiftRaydioSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/Mediasoup.framework/Mediasoup
+${PODS_XCFRAMEWORKS_BUILD_DIR}/SwiftRaydioSDK/WebRTC.framework/WebRTC

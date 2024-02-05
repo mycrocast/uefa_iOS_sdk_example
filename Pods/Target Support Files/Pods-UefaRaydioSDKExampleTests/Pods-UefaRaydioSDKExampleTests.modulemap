@@ -1,0 +1,6 @@
+framework module Pods_UefaRaydioSDKExampleTests {
+  umbrella header "Pods-UefaRaydioSDKExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

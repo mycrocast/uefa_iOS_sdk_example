@@ -1,0 +1,16 @@
+PODS:
+  - SwiftRaydioSDK (1.0.2)
+
+DEPENDENCIES:
+  - SwiftRaydioSDK
+
+SPEC REPOS:
+  https://github.com/mycrocast/raydioTestPod2:
+    - SwiftRaydioSDK
+
+SPEC CHECKSUMS:
+  SwiftRaydioSDK: 0c1b749bde0fbe1fa1685566bd064c369a70d7f5
+
+PODFILE CHECKSUM: 5182bb80f2d1185857e88384a3f8787c96c98693
+
+COCOAPODS: 1.15.0
