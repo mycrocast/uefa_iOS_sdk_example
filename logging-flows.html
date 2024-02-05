@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Logging Flows  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="Logging Flows  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" alt=""/>
+        Logging Flows  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="accessibility-consideration.html">Accessibility Consideration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="connecting-to-the-backend-and-receivng-the-streams.html">Connecting to the backend and receivng the streams</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="error-handling.html">Error Handling</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="general-information.html">General Information</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="getting-started.html">Getting Started</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="how-to-start-a-stream.html">How to start a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="listening-to-a-stream.html">Listening to a stream</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="logging-flows.html">Logging Flows</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="observing-background-state-and-network.html">Observing background state and network</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/RaydioSDK.html">RaydioSDK</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/InteractionType.html">InteractionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioError.html">RaydioError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioPlayState.html">RaydioPlayState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RaydioSDKState.html">RaydioSDKState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/WorkflowLogs.html">WorkflowLogs</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ErrorDelegate.html">ErrorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ListenStateDelegate.html">ListenStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LogDelegate.html">LogDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RaydioSDKStateDelegate.html">RaydioSDKStateDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StreamGroupDelegate.html">StreamGroupDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StreamsProviding.html">StreamsProviding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK8ErrorLogV">ErrorLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14InformationLogV">InformationLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14InteractionLogV">InteractionLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StreamGroup.html">StreamGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StreamGroupEntry.html">StreamGroupEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14SwiftRaydioSDK14SystemErrorLogV">SystemErrorLog</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='logging' class='heading'>Logging</h1>
+
+<p>Logging can be used to log interactions from the user with the system or general information what is happening internally.</p>
+
+<p>The developer needs to store the logs if wanted because the SDK just forwards them without storing them anywhere.</p>
+<h2 id='log-types' class='heading'>Log Types</h2>
+
+<p>There are in total 4 different log types providing different information:</p>
+
+<ul>
+<li><p>InformationLog</p></li>
+<li><p>ErrorLog</p></li>
+<li><p>SystemErrorLog</p></li>
+<li><p>InteractionLog</p></li>
+</ul>
+<h3 id='information-log' class='heading'>Information Log</h3>
+
+<p>The information log is just providing general information what the sdk is currently doing. Like &ldquo;requesting streams&rdquo;, &ldquo;received x streams&rdquo; and so on. This could be useful to see if some steps are missing or are executed in the wrong order.</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents an information about what the sdk is currently doing or trying to do</span>
+<span class="c1">/// Like "connecting" ...</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InformationLog</span> <span class="p">{</span>
+    <span class="c1">/// The current workflow the sdk is in</span>
+    <span class="k">var</span> <span class="nv">workflow</span><span class="p">:</span> <span class="kt">WorkflowLogs</span>
+
+    <span class="c1">/// a short description </span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>See the comments within the class for more information.</p>
+
+<p>The WorkflowLogs enum looks like this:</p>
+<pre class="highlight swift"><code><span class="c1">/// Enum describing from which workflow the log was generated from</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">WorkflowLogs</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">connecting</span> <span class="c1">// we are currently in the process of connecting to the backend</span>
+    <span class="k">case</span> <span class="n">subscribing</span> <span class="c1">// we are subscribing, basically registering in the backend to be allowed to send messages</span>
+    <span class="k">case</span> <span class="n">streams</span> <span class="c1">// we are requesting the current streams or handling updates from them</span>
+    <span class="k">case</span> <span class="n">playing</span> <span class="c1">// we are in the workflow of wanting to play and all the steps required to establish a connection with the audio</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>This will help you determine from where the log was produced.</p>
+<h3 id='errorlog' class='heading'>ErrorLog</h3>
+
+<p>The errorLog contains the error information that are produced by the sdk.</p>
+
+<p>Actual error handling is described here //TODO Link</p>
+
+<p>This is again helpful for later debugging or providing us with more information in case something goes wrong.</p>
+
+<p>The struct:</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents an error log entry that is thrown by the sdk</span>
+<span class="c1">/// for a specific workflow and with some kind of description</span>
+<span class="c1">/// </span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ErrorLog</span> <span class="p">{</span>
+    <span class="c1">/// The workflow at which the error occurred</span>
+    <span class="k">var</span> <span class="nv">workflow</span><span class="p">:</span> <span class="kt">WorkflowLogs</span>
+
+    <span class="c1">/// A plain text description providing more information</span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="c1">/// The actual error</span>
+    <span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">RaydioError</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='systemerrorlog' class='heading'>SystemErrorLog</h3>
+
+<p>This log entry is produces when we got a low level error in the system. This is purely for debugging purposes and should actually not happen. An example would be a failed deserialisation of a response.</p>
+
+<p>The struct:</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents a low level system error that was thrown</span>
+<span class="c1">/// at some point during some workflow</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SystemErrorLog</span> <span class="p">{</span>
+    <span class="c1">/// The workflow this error occured</span>
+    <span class="k">var</span> <span class="nv">workflow</span><span class="p">:</span> <span class="kt">WorkflowLogs</span>
+
+    <span class="c1">/// A short description if possible about the error</span>
+    <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span>
+
+    <span class="c1">/// The actual error</span>
+    <span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='interactionlog' class='heading'>InteractionLog</h3>
+
+<p>The interaction log is produced when there was an interaction with the system.</p>
+
+<p>This is either a play or pause of a stream. This can happen more times than the user actually presses play/pause as internal reconnects (after network issues) also trigger this.</p>
+
+<p>If you want to track the actual user only interactions, you should observe your ui.</p>
+
+<p>The struct:</p>
+<pre class="highlight swift"><code><span class="c1">/// Represents the interaction of play or pause</span>
+<span class="c1">/// This can be triggered by the user hitting a button but also by the system on a reconnect</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InteractionLog</span> <span class="p">{</span>
+    <span class="c1">/// What happened?</span>
+    <span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">InteractionType</span>
+
+    <span class="c1">/// The stream this interaction has happened on</span>
+    <span class="k">var</span> <span class="nv">stream</span><span class="p">:</span> <span class="kt">StreamGroupEntry</span>
+<span class="p">}</span>
+
+
+<span class="c1">/// enum representing what has happened</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="kt">InteractionType</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">play</span> <span class="c1">/// a play was triggerred</span>
+    <span class="k">case</span> <span class="n">pause</span> <span class="c1">/// a pause was triggered</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='how-to-receive-logs' class='heading'>How to receive logs</h2>
+
+<p>To actually receive the Logs you need to implement the LogDelegate</p>
+<pre class="highlight swift"><code><span class="c1">/// Implement this delegate to receive log information</span>
+<span class="c1">/// provided by the sdk</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">LogDelegate</span> <span class="p">{</span>
+    <span class="c1">/// called to provide information logs</span>
+    <span class="kd">func</span> <span class="nf">onInformationLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">information</span><span class="p">:</span> <span class="kt">InformationLog</span><span class="p">)</span>
+
+    <span class="c1">/// called to provide error logs, this are errors thrown by the sdk itself and</span>
+    <span class="c1">/// related to some kind of workflow</span>
+    <span class="kd">func</span> <span class="nf">onErrorLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">ErrorLog</span><span class="p">)</span>
+
+    <span class="c1">/// called to provide logs that a user has performed an interaction</span>
+    <span class="c1">/// this is limited to play and pause of  a stream</span>
+    <span class="kd">func</span> <span class="nf">onInteractionLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">interaction</span><span class="p">:</span> <span class="kt">InteractionLog</span><span class="p">)</span>
+
+    <span class="c1">/// called to provide system errors, these are low level errors that cannot be mapped</span>
+    <span class="c1">/// to any useful state in the sdk and should not happen</span>
+    <span class="kd">func</span> <span class="nf">onSystemErrorLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">systemError</span><span class="p">:</span> <span class="kt">SystemErrorLog</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>You need to register this class on the <code>logDelegate</code> property of the <code><a href="Protocols/RaydioSDKProviding.html">RaydioSDKProviding</a></code></p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2024-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
