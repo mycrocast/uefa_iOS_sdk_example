@@ -1,16 +1,16 @@
 PODS:
-  - SwiftRaydioSDK (1.0.3)
+  - SwiftRaydioSDK (1.0.8)
 
 DEPENDENCIES:
   - SwiftRaydioSDK
 
 SPEC REPOS:
-  https://github.com/mycrocast/raydioTestPod2:
+  https://github.com/UEFADigital/app-audio-commentary-ios:
     - SwiftRaydioSDK
 
 SPEC CHECKSUMS:
-  SwiftRaydioSDK: 260352579a98b3d1fee118f395068af090ec0ceb
+  SwiftRaydioSDK: f1c763417d70cf85ddb8d754b5805bfdd256d4ba
 
-PODFILE CHECKSUM: 5182bb80f2d1185857e88384a3f8787c96c98693
+PODFILE CHECKSUM: cbb06cbb695c1817e4837c8c20083e409b26d779
 
 COCOAPODS: 1.15.0

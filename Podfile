@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-source 'https://github.com/mycrocast/raydioTestPod2.git' 
+source 'https://github.com/UEFADigital/app-audio-commentary-ios.git' 
 
 target 'UefaRaydioSDKExample' do
   # Comment the next line if you don't want to use dynamic frameworks

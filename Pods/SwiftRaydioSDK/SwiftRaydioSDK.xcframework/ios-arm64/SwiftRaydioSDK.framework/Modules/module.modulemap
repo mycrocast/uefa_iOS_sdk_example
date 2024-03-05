@@ -1,7 +1,7 @@
 framework module SwiftRaydioSDK {
   umbrella header "SwiftRaydioSDK.h"
-  export *
 
+  export *
   module * { export * }
 }
 
